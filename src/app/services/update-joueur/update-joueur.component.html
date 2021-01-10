@@ -1,0 +1,45 @@
+<div class="container">
+    <div>
+      <h2>Modifier un Joueur :</h2>             
+    </div>
+         <form >         
+             <div  hidden  class="col-sm-2 col-md-2 col-lg-2">
+               <label >ID  Joueur</label>
+               <input readonly  type="text"  [(ngModel)]="currentJoueur.idJoueur"  
+                   name="idJoueur" class="form-control">
+              </div>
+         
+             <div class="col-sm-4 col-md-4 col-lg-4" >
+               <label >Nom Joueur</label>
+               <input  type="text"[(ngModel)]= "currentJoueur.nomJoueur"  
+                   name="nomJoueur" class="form-control">
+             </div>
+             <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Prenom Joueur</label>
+                <input  type="text"[(ngModel)]= "currentJoueur.prenomJoueur"  
+                    name="prenomJoueur" class="form-control">
+              </div>
+
+             
+
+             <div class="col-sm-4 col-md-4 col-lg-4">
+                 <label >Date de Signature</label>
+                 <input  type="date"  [ngModel]="currentJoueur.jourdesignature | date: 'yyyy-MM-dd'" 
+                 (ngModelChange)=" currentJoueur.jourdesignature= $event"   name="jourdesignature" class="form-control">
+             </div>
+             <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Poste Joueur</label>
+                <input  type="text"[(ngModel)]= "currentJoueur.posteJoueur"  
+                    name="posteJoueur" class="form-control">
+              </div>
+             <div class="col-sm-4 col-md-4 col-lg-4">
+                <label >Age</label>
+                <input  type="number"  [ngModel]="currentJoueur.age " 
+                (ngModelChange)=" currentJoueur.age= $event"   name="age" class="form-control">
+            </div>
+             
+              <div class="mt-2">
+                 <button type="submit"  (click)="updateJoueur()"  class="btn btn-success">Modifer</button>
+              </div>  
+         </form>
+</div>
